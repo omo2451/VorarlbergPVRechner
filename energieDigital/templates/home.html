@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<!-- Eventually by HTML5 UP -->
+{% load static %}
+<html>
+    <head>
+        <title>Vorarlberg PV-Rechner</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+		<!--<link rel="stylesheet" href="assets/css/main.css" />-->
+       <link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
+        <!-- BOKEH -->
+        <script type="text/javascript" src="{% static "bokeh-2.1.1.min.js" %}"></script>  
+    </head>
+    <body class="is-preload">
+        <!-- Header -->
+            <header> 				
+				<p>Die konventionelle Energieerzeugung ist im Umbruch und es treten verstärkt dezentrale Akteure am Markt auf.</p>			
+				<br>
+				Für die Berechnung wurden folgende Parameter genutzt:
+				<ul><li>Optimaler Neigungswinkel und Azimut werden für den Standort berechnet </li><li>4-Personen-Haushalt mit 4500 kWh im Jahr </li><li>Südliche Ausrichtung </li></ul>
+				                                        
+            </header>
+              <!--   <div style="background-color:rgba(0,0,0,0.5);padding: 20px">-->
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="nCycleHin" id="text" placeholder="Ort (z.B. Feldkirch)"value={{ nCycleZurueck }}>  
+						<input type="submit" value="Berechnung starten!" />
+						<br>
+						<img src="{% static "sinus.jpg" %}">
+					</form>       
+               <!--  </div>
+        <!-- Scripts -->
+            <script src="{% static "assets/js/main.js" %}"></script>
+    </body>
+</html>

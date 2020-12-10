@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+    <head>
+        <title>Die ist eine Testseite</title>
+    </head>
+    <body>
+        <form method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<input type="number" name="nCycleHin" value={{ nCycleZurueck }}>  
+			<br>
+			<img src="{% static "sinus.jpg" %}">
+        <form>        
+    </body>
+</html>
